@@ -8,9 +8,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Figtree:ital,wght@0,300..900;1,300..900&family=Jost:ital,wght@0,389;1,389&display=swap" rel="stylesheet">
   
     <link rel="stylesheet" href="sign.css">
-    <title>Document</title>
+    <title>Sign</title>
 </head>
 <body>
+    <!--nav bar for sign page-->
+    <div class="nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="">Shop</a></li>
+          <li><a href="">About</a></li>
+          <li><a href="">Contect</a></li>
+          <li><a href="">Cart</a></li>
+          <li><a href="sign.html">Register</a></li>
+        </ul>
+      </div>
+    <!--login form-->
+  <form action="########">
+         <div class="form_con">
+            <div class="log_con" id="div1">
+                <div class="head_log">
+                    <h2>Login </h2>
+                </div>
+                <div class="form_ele">
+                    <label for="fname">User name</label>
+                    <input type="text" class="input" required>
+                    <label for="fname">password</label>
+                    <input type="text" class="input" required>
+                    <button type="submit"> Log in </button>
+                    <div id="err_alert"></div>
+                    <p>
+                        Do not have an account <a onclick="showloginform()">Register</a>
+                    </p>
+                </div>
+            </div>
+            <!--register form -->
+            <div class="reg_con" id="div2">
+                <div class="head_reg">
+                    <h2>Register</h2>
+                </div>
+                <div class="form_ele">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="input">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="input">
+                    <label for="email">Email</label>
+                    <input type="text" class="input">
+                    <label for="pwd">Password</label>
+                    <input type="password" class="input">
     
+                    <button type="submit">Register</button>
+                    <div id="err_alert"></div>
+                    <p>
+                        Already have an account  <a onclick="showregisterform()">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div> 
+    </form>
+   <script src="sign.js"></script>
 </body>
 </html>
