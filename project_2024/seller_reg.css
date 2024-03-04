@@ -1,12 +1,19 @@
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Comfortaa", sans-serif;
-    background-color: rgb(230, 240, 239);
+    background-color: rgb(223, 231, 233);
 }
-
+.main_nav{
+    display: flex;
+    justify-content: space-between;
+}
+h2{
+    font-size: 18px;
+    padding: 15px 25px;
+    font-weight: 900;
+}
 .nav {
     list-style-type: none;
     background-color: none;
@@ -33,13 +40,22 @@
     text-decoration: none;
     color: black;
 }
-.log_con,
-.reg_con {
-  display: none; 
-}
+.col_2_log , .col_2_reg {
+    display: none; 
+  }
+  
+  #div1 {
+    display: block; 
+  }
 
-#div1 {
-  display: block; 
+.main_con{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+.col_1 , .col_2{
+    padding: 50px;
+    width: 40%;
 }
 
 .form_con{
@@ -47,9 +63,9 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-size: 15px;
+    font-size: 10px;
 }
-input{
+input , select{
     display: block;
     padding: 10px;
     width: 100%;
@@ -68,12 +84,13 @@ button{
     color: rgb(245, 244, 244);
     width: 100%;
 }
+.col_1_1 , .col_1_2{
+   display: flex;
+   flex-direction: column;
+   margin-top: 20px;
+}
+h3{
+    font-size: 25px;
+    padding: 10px 0;
+}
 
-h2{
-    text-align: center;
-    padding-bottom: 20px;
-    font-weight: 300px;
-}
-a{
-    color: blue;
-}

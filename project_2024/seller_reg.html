@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Figtree:ital,wght@0,300..900;1,300..900&family=Jost:ital,wght@0,389;1,389&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="seller_reg.css">
+</head>
+<body>
+    <!--navigation bar -->
+    <div class="main_nav">
+        <div class="n_name">
+            <h2>Fast Track</h3>
+        </div>
+        <div class="nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="">Shop</a></li>
+              <li><a href="">About</a></li>
+              <li><a href="">Contect</a></li>
+              <li><a href="">Cart</a></li>
+              <li class="active"><a href="">Register</a></li>
+            </ul>
+          </div>
+    </div>
+    
+      <!--seller register contents-->
+      <div class="main_con">
+        <div class="col_1">
+            <div class="col_1_1">
+                <h3>Seller Register</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, ratione non. Libero inventore voluptate rerum delectus eligendi harum aut architecto quis facilis asperiores tenetur voluptatem debitis, dolor nostrum nihil nemo.</p>
+            </div>
+            <div class="col_1_2">
+                <p>Already have an account</p>
+                <button onclick="showloginform()" id="btn">Seller login</button>
+            </div> 
+        </div>
+        <div class="col_2">
+            <div class="col_2_reg" id="div1">
+                <form action="###############">
+                    <label for="">Name</label>
+                    <input type="text" name="" id="" required>
+                    <label for="">Email</label>
+                    <input type="text" name="" id="" required>
+                    <label for="b_name">Business name</label>
+                    <input type="text" name="b_name" id="" required>
+                    
+                    <label for="B_name">Business type</label>
+                    <select name="B_name" id="" required>
+                        <option value="electronic">electronic item.</option>
+                        <option value="automobile">automobile</option>
+                    </select>
+
+                    <label for="">create password</label>
+                    <input type="password" name="" id="" required>
+
+                    <button>submit</button>
+                </form>
+            </div>
+            <div class="col_2_log" id="div2">
+                <form action="##############">
+                    <label for="">Email</label>
+                    <input type="text" name="" id="" required>
+                    <label for="">password</label>
+                    <input type="password" name="" id="" required>
+                    <button>submit</button>
+                </form>
+            </div>
+      </div>
+      <script>
+       function showloginform(){
+        document.getElementById('div1').style.display = 'none';
+        document.getElementById('div2').style.display = 'block';
+        var btn_login = document.getElementById('btn');
+        btn_login.innerHTML = 'seller register';
+    }
+    function showregisterform(){
+        document.getElementById('div2').style.display = 'none';
+        document.getElementById('div1').style.display = 'block';
+        var btn_login = document.getElementById('btn');
+        btn_login.innerHTML = 'Seller login';
+    }
+      </script>
+</body>
+</html>
