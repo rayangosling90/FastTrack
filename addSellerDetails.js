@@ -1,7 +1,7 @@
 const express = require('express');
-const bodyParser = require(body-parser);
+const bodyParser = require('body-parser');
 const mysql = require('mysql2/promise');
-
+const path = require('path');
 const app = express();
 const port = 3000;
 
@@ -17,12 +17,16 @@ const dbConfig = {
 }
 // middleware to parse from data
 app.use(bodyParser.urlencoded({extends:true}));
+// Serve static file (HTML AND CSS)
+app.use(express.static(path.join(__dirname, 'project_2024')));
+
 
 //serve html form 
 app.get('/' , (req , res) =>{
-    res.sendFile(__dirname+'/seller_reg.html');
+    res.sendFile(path.join(__dirname, 'project_2024', 'seller_reg.html'));
 });
-//handle form submisstion 
+
+//handle Register form submisstion 
 app.post('/register', async(req , res)=>{
     const {name , email , b_name , b_type , password} = req.body ;
     try{
@@ -45,8 +49,33 @@ app.post('/register', async(req , res)=>{
 
     }
 });
+//handle Loginform submission
+app.post('/login', async (req, res) => {
+    const { login_email, login_password } = req.body;
+    try {
+        const connection = await mysql.createConnection(dbConfig);
+
+        // Query the database to check if the email and password match
+        const [rows] = await connection.execute(
+            'SELECT * FROM seller_details WHERE email = ? AND password = ?',
+            [login_email, login_password]
+        );
+
+        // Check if a user with the provided email and password exists
+        if (rows.length > 0) {
+            res.send('Login successful');
+        } else {
+            res.send('Invalid email or password');
+        }
+
+       
+    } catch (err) {
+        console.error('Error querying database for login ', err);
+        res.status(500).send('Internal server error');
+    }
+});   
 
 // start the server 
 app.listen(port, () =>{
-    console.log('server is running on http:/localhost${port}');
+    console.log('server is running on http:/localhost:${port}');
 })
